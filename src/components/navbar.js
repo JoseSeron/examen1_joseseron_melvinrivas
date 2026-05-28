@@ -11,6 +11,7 @@ const Navbar = () => {
             <button className="btn">News&Popular</button>
             <button className="btn">My List</button>
             <button className="btn">Browse by Languages</button>
+            <button className="btn">Browse by Languages</button>
         </nav>
     )
 }
