@@ -22,8 +22,9 @@ const Navbar = () => {
     }, []);
 
     return (
+        
         <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
-
+       
             {/*izquierda*/}
             <div className="nav-left">
                 <img src={logo} alt="Logo" className="nav-logo" />
@@ -31,7 +32,7 @@ const Navbar = () => {
                 <button className="nav-btn">Shows</button>
                 <button className="nav-btn">Movies</button>
                 <button className="nav-btn">Games</button>
-                <button className="nav-btn">News&Popular</button>
+                <button className="nav-btn">News & Popular</button>
                 <button className="nav-btn">My List</button>
             </div>
 
