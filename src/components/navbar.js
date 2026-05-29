@@ -25,9 +25,44 @@ const Navbar = () => {
         };
     }, []);
 
+    /*state changed para menu hamburguesa1*/
+    const [menuOpen, setMenuOpen] = React.useState(false);
+    const menuRef = React.useRef(null);
+    /*
+    React.useEffect(() => {
+        const handleClickOutside = (event) => {
+            if (
+                menuRef.current &&
+                !menuRef.current.contains(event.target)
+            ) {
+                setMenuOpen(false);
+            }
+        };
+
+        document.addEventListener("mousedown", handleClickOutside);
+
+        return () => {
+            document.removeEventListener("mousedown", handleClickOutside);
+        };
+    }, []);
+*/
     return (
 
         <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
+
+
+            <div
+                ref={menuRef}
+                className={`menu-hamburguesa-explorar ${menuOpen ? "open" : ""}`}>
+
+                <button className="btn-menu-exp">Inicio</button>
+                <button className="btn-menu-exp">Series</button>
+                <button className="btn-menu-exp">Películas</button>
+                <button className="btn-menu-exp">Juegos</button>
+                <button className="btn-menu-exp">Mi Lista</button>
+
+            </div>
+
 
             {/*izquierda*/}
             <div className="nav-left">
@@ -39,7 +74,15 @@ const Navbar = () => {
                 <button className="nav-btn">Novedades Populares</button>
                 <button className="nav-btn">Mi Lista</button>
                 <button className="nav-btn">Explorar por Idiomas</button>
-                <button className="explorar-btn">Explorar</button>
+                <button
+                    className="explorar-btn"
+                    onClick={(e) => {
+                       
+                        setMenuOpen(prev => !prev);
+                    }}
+                >
+                    ☰ Explorar
+                </button>
             </div>
 
             {/*derecha*/}
@@ -49,6 +92,8 @@ const Navbar = () => {
                 <img src={usuario} alt="usuario" className="nav-usuario" />
             </div>
         </nav>
+
+
     )
 }
 export default Navbar

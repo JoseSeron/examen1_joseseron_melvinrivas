@@ -1,7 +1,8 @@
 .navbar {
   display: flex;
   align-items: center;
-  padding: 20px 60px;
+  padding:
+    clamp(10px, 2vw, 20px) clamp(20px, 5vw, 60px);
   width: 100%;
   left: 0;
   justify-content: space-between;
@@ -19,9 +20,6 @@
       transparent);
   backdrop-filter: blur(1px);
   transition: background-color 0.6s ease;
-
-
-
 }
 
 /*cambio de fondo cuando baja el scroll*/
@@ -32,7 +30,7 @@
 
 /*logo*/
 .nav-logo {
-  height: 24px;
+  height: clamp(14px, 2vw, 24px);
   cursor: pointer;
   object-fit: contain;
   padding-right: 10px;
@@ -42,14 +40,14 @@
 .nav-left {
   display: flex;
   align-items: center;
-  gap: 18px;
+  gap: clamp(0.1rem, 2vw, 1.125rem);
 }
 
 /*cluster derecha*/
 .nav-right {
   display: flex;
   align-items: center;
-  gap: 32px;
+  gap: clamp(10px, 2vw, 32px);
 }
 
 /*botones*/
@@ -57,26 +55,25 @@
   background: none;
   border: none;
   color: #ffffff;
-  font-size: 14px;
+  font-size: clamp(0.5rem, 1.2vw, 1rem);
   cursor: pointer;
-  transition: 0.3s;
+  transition: 0s;
 }
 
 .explorar-btn {
+  display: none;
   background: none;
   border: none;
   color: #ffffff;
-  font-size: 14px;
+  font-size: clamp(0.5rem, 1.2vw, 2rem);
   cursor: pointer;
   transition: 0.3s;
 }
 
-  .explorar-btn {
-   display:none;
-  }
 
 .nav-btn:hover {
   color: rgb(221, 221, 221);
+
 }
 
 .explorar-btn:hover {
@@ -106,49 +103,6 @@
 }
 
 /*resizing dinamico*/
-/*cambio a pantalla media-grande */
-@media (max-width: 1024px) {
-  .navbar {
-    padding: 10px 30px;
-  }
-
-  .nav-logo {
-    height: 22px;
-  }
-
-  .nav-left {
-    gap: 14px;
-  }
-
-  .nav-btn {
-    font-size: 13px;
-  }
-
-  
-
-}
-
-/*cambio a pantalla mediana*/
-@media (max-width: 1024px) {
-
-  /*cuando pantalla es menor a 1024px*/
-  .navbar {
-    padding: 10px 20px;
-  }
-
-  .nav-logo {
-    height: 20px;
-  }
-
-  .nav-left {
-    gap: 10px;
-  }
-
-  .nav-btn {
-    font-size: 12px;
-  }
-}
-
 /*cambio a pantalla pequenia y desaparecen botones*/
 @media (max-width: 768px) {
 
@@ -157,11 +111,45 @@
     display: none;
   }
 
-  .nav-logo {
-    height: 14px;
-  }
-
   .explorar-btn {
     display: block;
   }
+}
+
+/*menu hamburguesa*/
+.menu-hamburguesa-explorar {
+  position: absolute;
+  top: 60px;
+  left: 20px;
+
+  background: black;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.2s;
+}
+
+.menu-hamburguesa-explorar.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.btn-menu-exp {
+  background: none;
+  border: none;
+  color: white;
+
+  text-align: left;
+  font-size: 14px;
+
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.btn-menu-exp:hover {
+  color: #ccc;
 }
