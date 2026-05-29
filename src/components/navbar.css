@@ -2,13 +2,16 @@
   display: flex;
   align-items: center;
   padding: 20px 60px;
-  position: fixed;
   width: 100%;
-  top: 0;
   left: 0;
-  z-index: 1000;
   justify-content: space-between;
+
+  /*para que se quede en la parte de arriba y encima del banner*/
+  top: 0;
+  position: fixed;
   box-sizing: border-box;
+  z-index: 1000;
+
 
   /*fondito bonito con blur y grandiente*/
   background: linear-gradient(to bottom,
@@ -17,8 +20,11 @@
   backdrop-filter: blur(1px);
   transition: background-color 0.6s ease;
 
+
+
 }
 
+/*cambio de fondo cuando baja el scroll*/
 .navbar.scrolled {
   background-color: rgb(0, 0, 0);
   transition: background-color 0.3s ease;
@@ -56,7 +62,24 @@
   transition: 0.3s;
 }
 
+.explorar-btn {
+  background: none;
+  border: none;
+  color: #ffffff;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+  .explorar-btn {
+   display:none;
+  }
+
 .nav-btn:hover {
+  color: rgb(221, 221, 221);
+}
+
+.explorar-btn:hover {
   color: rgb(221, 221, 221);
 }
 
@@ -101,6 +124,8 @@
     font-size: 13px;
   }
 
+  
+
 }
 
 /*cambio a pantalla mediana*/
@@ -134,5 +159,9 @@
 
   .nav-logo {
     height: 14px;
+  }
+
+  .explorar-btn {
+    display: block;
   }
 }

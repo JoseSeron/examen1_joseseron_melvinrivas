@@ -6,6 +6,7 @@ import campana from '../campana.png'
 import usuario from '../usuario.png'
 const Navbar = () => {
 
+    /*stateChange para el scroll*/
     const [scrolled, setScrolled] = React.useState(false);
 
     React.useEffect(() => {
@@ -28,8 +29,6 @@ const Navbar = () => {
 
         <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
 
-          
-
             {/*izquierda*/}
             <div className="nav-left">
                 <img src={logo} alt="Logo" className="nav-logo" />
@@ -40,6 +39,7 @@ const Navbar = () => {
                 <button className="nav-btn">Novedades Populares</button>
                 <button className="nav-btn">Mi Lista</button>
                 <button className="nav-btn">Explorar por Idiomas</button>
+                <button className="explorar-btn">Explorar</button>
             </div>
 
             {/*derecha*/}
