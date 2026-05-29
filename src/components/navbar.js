@@ -28,28 +28,31 @@ const Navbar = () => {
     /*state changed para menu hamburguesa1*/
     const [menuOpen, setMenuOpen] = React.useState(false);
     const menuRef = React.useRef(null);
-    /*
+
     React.useEffect(() => {
         const handleClickOutside = (event) => {
-            if (
-                menuRef.current &&
-                !menuRef.current.contains(event.target)
-            ) {
+            const menu = menuRef.current;
+
+            if (!menu) return;
+
+            const isClickInsideMenu = menu.contains(event.target);
+            const isClickOnButton = event.target.closest(".explorar-btn");
+
+            if (!isClickInsideMenu && !isClickOnButton) {
                 setMenuOpen(false);
             }
         };
 
-        document.addEventListener("mousedown", handleClickOutside);
+        document.addEventListener("click", handleClickOutside);
 
         return () => {
-            document.removeEventListener("mousedown", handleClickOutside);
+            document.removeEventListener("click", handleClickOutside);
         };
     }, []);
-*/
+
     return (
 
         <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
-
 
             <div
                 ref={menuRef}
@@ -77,7 +80,7 @@ const Navbar = () => {
                 <button
                     className="explorar-btn"
                     onClick={(e) => {
-                       
+
                         setMenuOpen(prev => !prev);
                     }}
                 >
