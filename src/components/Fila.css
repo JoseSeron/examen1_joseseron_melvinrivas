@@ -1,0 +1,49 @@
+.fila {
+  background-color: rgb(27, 26, 26);
+  position: relative;
+  padding: 20px;
+}
+
+.fila-posters {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: hidden;
+  gap: 10px;
+  scroll-behavior: smooth;
+}
+
+.izquierda {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.derecha {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.flecha {
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 3rem;
+  cursor: pointer;
+}
+
+.poster {
+  width: 280px;
+  height: 160px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.titulo-fila {
+  color: white;
+  text-align: left;
+  margin-left: 20px;
+  margin-bottom: 10px;
+}
