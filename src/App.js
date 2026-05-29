@@ -6,11 +6,11 @@ import Destacado from './components/destacado';
 function App() {
   return (
     <div className="App" >
-
+      
       <Navbar />
       <Destacado />
-      
-      </div>
+     </div> 
+    
   );
 }
 

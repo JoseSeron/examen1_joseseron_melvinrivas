@@ -1,53 +1,167 @@
 .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items:center;
-    background-color: rgba(0, 0, 0, 0.6);
-    padding: 10px 20px;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
+  display: flex;
+  align-items: center;
+  padding: 20px 60px;
+  width: 100%;
+  left: 0;
+  justify-content: space-between;
+
+  /*para que se quede en la parte de arriba y encima del banner*/
+  top: 0;
+  position: fixed;
+  box-sizing: border-box;
+  z-index: 1000;
+
+
+  /*fondito bonito con blur y grandiente*/
+  background: linear-gradient(to bottom,
+      rgba(0, 0, 0, 0.85),
+      transparent);
+  backdrop-filter: blur(1px);
+  transition: background-color 0.6s ease;
+
+
+
+}
+
+/*cambio de fondo cuando baja el scroll*/
+.navbar.scrolled {
+  background-color: rgb(0, 0, 0);
+  transition: background-color 0.3s ease;
 }
 
 /*logo*/
 .nav-logo {
-    height: 28px;
-    cursor: pointer;
-    object-fit: contain;
+  height: 24px;
+  cursor: pointer;
+  object-fit: contain;
+  padding-right: 10px;
 }
 
-/*izquierda*/
+/*cluster izquierda*/
 .nav-left {
-    display: flex;
-    align-items: center;
-    gap: 18px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
 }
 
-/*derecha*/
+/*cluster derecha*/
 .nav-right {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
+  gap: 32px;
 }
 
 /*botones*/
 .nav-btn {
   background: none;
   border: none;
-  color: #e5e5e5;
+  color: #ffffff;
   font-size: 14px;
   cursor: pointer;
   transition: 0.3s;
 }
 
-.nav-btn:hover {
-  color: white;
+.explorar-btn {
+  background: none;
+  border: none;
+  color: #ffffff;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.3s;
 }
 
-
-/* RESPONSIVE (MOBILE) */
-@media (max-width: 768px) {
-  .nav-left .nav-btn {
-    display: none; /* oculta links en movil */
+  .explorar-btn {
+   display:none;
   }
 
+.nav-btn:hover {
+  color: rgb(221, 221, 221);
+}
+
+.explorar-btn:hover {
+  color: rgb(221, 221, 221);
+}
+
+.nav-lupa {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+  fill: white;
+}
+
+.nav-campana {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+  fill: white;
+}
+
+.nav-usuario {
+  width: 26px;
+  height: auto;
+  cursor: pointer;
+}
+
+/*resizing dinamico*/
+/*cambio a pantalla media-grande */
+@media (max-width: 1024px) {
+  .navbar {
+    padding: 10px 30px;
+  }
+
+  .nav-logo {
+    height: 22px;
+  }
+
+  .nav-left {
+    gap: 14px;
+  }
+
+  .nav-btn {
+    font-size: 13px;
+  }
+
+  
+
+}
+
+/*cambio a pantalla mediana*/
+@media (max-width: 1024px) {
+
+  /*cuando pantalla es menor a 1024px*/
+  .navbar {
+    padding: 10px 20px;
+  }
+
+  .nav-logo {
+    height: 20px;
+  }
+
+  .nav-left {
+    gap: 10px;
+  }
+
+  .nav-btn {
+    font-size: 12px;
+  }
+}
+
+/*cambio a pantalla pequenia y desaparecen botones*/
+@media (max-width: 768px) {
+
+  /*cuando pantalla es menor a 768px*/
+  .nav-left .nav-btn {
+    display: none;
+  }
+
+  .nav-logo {
+    height: 14px;
+  }
+
+  .explorar-btn {
+    display: block;
+  }
 }
