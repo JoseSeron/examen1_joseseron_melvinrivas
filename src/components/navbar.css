@@ -1,53 +1,80 @@
 .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items:center;
-    background-color: rgba(0, 0, 0, 0.6);
-    padding: 10px 20px;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
+  display: flex;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.1);
+  padding: 20px 60px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  justify-content: space-between;
+  box-sizing: border-box;
 }
 
 /*logo*/
 .nav-logo {
-    height: 28px;
-    cursor: pointer;
-    object-fit: contain;
+  height: 24px;
+  cursor: pointer;
+  object-fit: contain;
+  padding-right: 10px;
 }
 
 /*izquierda*/
 .nav-left {
-    display: flex;
-    align-items: center;
-    gap: 18px;
+  display: flex;
+  align-items: center;
+  gap: 22px;
 }
 
 /*derecha*/
 .nav-right {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
+  gap: 32px;
 }
 
 /*botones*/
 .nav-btn {
   background: none;
   border: none;
-  color: #e5e5e5;
+  color: #ffffff;
   font-size: 14px;
   cursor: pointer;
   transition: 0.3s;
 }
 
 .nav-btn:hover {
-  color: white;
+  color: rgb(221, 221, 221);
 }
 
+.nav-lupa {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+  fill: white;
+}
 
-/* RESPONSIVE (MOBILE) */
+.nav-campana {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+  fill: white;
+}
+
+/*cambio a pantalla pequenia*/
 @media (max-width: 768px) {
+
+  /*cuando pantalla es menor a 768px*/
   .nav-left .nav-btn {
-    display: none; /* oculta links en movil */
+    display: none;
   }
+
+  .navbar {
+    padding: 10px 15px;
+  }
+
 
 }
