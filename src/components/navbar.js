@@ -3,6 +3,7 @@ import './navbar.css'
 import logo from '../logo.png'
 import lupa2 from '../lupa2.png'
 import campana from '../campana.png'
+import usuario from '../usuario.png'
 const Navbar = () => {
 
     const [scrolled, setScrolled] = React.useState(false);
@@ -45,7 +46,7 @@ const Navbar = () => {
             <div className="nav-right">
                 <img src={lupa2} alt="lupa2" className="nav-lupa" />
                 <img src={campana} alt="campana" className="nav-campana" />
-                
+                <img src={usuario} alt="usuario" className="nav-usuario" />
             </div>
         </nav>
     )
