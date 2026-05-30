@@ -116,7 +116,7 @@
   }
 }
 
-/*menu hamburguesa*/
+/*menu hamburguesa
 .menu-hamburguesa-explorar {
   position: absolute;
   top: 60px;
@@ -136,7 +136,7 @@
 .menu-hamburguesa-explorar.open {
   opacity: 1;
   pointer-events: auto;
-}
+} */
 
 .btn-menu-exp {
   background: none;
@@ -152,4 +152,38 @@
 
 .btn-menu-exp:hover {
   color: #ccc;
+}
+
+.menu-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+}
+
+.menu-hamburguesa-explorar {
+  position: fixed;
+  top: 70px;
+  left: 20px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  background: rgba(0, 0, 0, 0.95);
+  padding: 15px;
+  border-radius: 8px;
+
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-10px);
+
+  transition: all 0.3s ease;
+
+  z-index: 1001;
+}
+
+.menu-hamburguesa-explorar.open {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
 }
