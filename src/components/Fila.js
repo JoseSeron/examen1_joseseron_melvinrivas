@@ -11,7 +11,7 @@ const moverDerecha = () => {
   if (fila.scrollLeft >= maxScroll - 10) {
     fila.scrollLeft = 0;
   } else {
-    fila.scrollLeft += 1240;
+    fila.scrollLeft += 1170;
   }
 };
 
@@ -22,7 +22,7 @@ const moverIzquierda = () => {
   if (fila.scrollLeft <= 10) {
     fila.scrollLeft = maxScroll;
   } else {
-    fila.scrollLeft -= 1240;
+    fila.scrollLeft -= 1170;
   }
 };
 
