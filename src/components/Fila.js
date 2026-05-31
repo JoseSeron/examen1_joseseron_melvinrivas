@@ -1,30 +1,31 @@
 import { useRef } from "react";
 import "./Fila.css";
+import Tarjeta from "./tarjeta";
 
 const Fila = ({ titulo, peliculas }) => {
   const filaRef = useRef(null);
 
-const moverDerecha = () => {
-  const fila = filaRef.current;
-  const maxScroll = fila.scrollWidth - fila.clientWidth;
+  const moverDerecha = () => {
+    const fila = filaRef.current;
+    const maxScroll = fila.scrollWidth - fila.clientWidth;
 
-  if (fila.scrollLeft >= maxScroll - 10) {
-    fila.scrollLeft = 0;
-  } else {
-    fila.scrollLeft += 1170;
-  }
-};
+    if (fila.scrollLeft >= maxScroll - 10) {
+      fila.scrollLeft = 0;
+    } else {
+      fila.scrollLeft += 1170;
+    }
+  };
 
-const moverIzquierda = () => {
-  const fila = filaRef.current;
-  const maxScroll = fila.scrollWidth - fila.clientWidth;
+  const moverIzquierda = () => {
+    const fila = filaRef.current;
+    const maxScroll = fila.scrollWidth - fila.clientWidth;
 
-  if (fila.scrollLeft <= 10) {
-    fila.scrollLeft = maxScroll;
-  } else {
-    fila.scrollLeft -= 1170;
-  }
-};
+    if (fila.scrollLeft <= 10) {
+      fila.scrollLeft = maxScroll;
+    } else {
+      fila.scrollLeft -= 1170;
+    }
+  };
 
   return (
     <div className="fila">
@@ -36,11 +37,9 @@ const moverIzquierda = () => {
 
       <div className="fila-posters" ref={filaRef}>
         {peliculas.map((pelicula) => (
-          <img
+          <Tarjeta
             key={pelicula.id}
-            src={pelicula.imagen}
-            alt={pelicula.nombre}
-            className="poster"
+            pelicula={pelicula}
           />
         ))}
       </div>
