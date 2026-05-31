@@ -8,10 +8,11 @@
   display: flex;
   flex-wrap: nowrap;
   overflow-x: hidden;
+  overflow-y: hidden;
   gap: 10px;
   scroll-behavior: smooth;
+  padding: 20px 0;
 }
-
 .izquierda {
   position: absolute;
   left: 10px;
@@ -32,14 +33,7 @@
   color: white;
   font-size: 3rem;
   cursor: pointer;
-}
-
-.poster {
-  width: 280px;
-  height: 160px;
-  object-fit: cover;
-  flex-shrink: 0;
-  gap: 10px;
+  z-index: 1000;
 }
 
 .titulo-fila {
